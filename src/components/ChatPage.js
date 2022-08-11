@@ -17,17 +17,29 @@ const ChatPage = () => {
     }, [])
 
     return (
-        <div className='msgs'>
-            {
-                messages.map((message, index) => (
-                    <div key={index} className={`chatLine ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
-                        <img src={message.photoURL} alt="Pic" />
-                        <p> {message.text}</p>
-                        <img src={message?.image}></img>
-                    </div>
-                ))
-            }
+        <div className='w-full'>
+            <div className='flex flex-col w-11/12 mx-auto pb-16'>
+                {
+                    messages.map((message, index) => (
+                        <div key={index} className={`flex  ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
 
+                            <div className={`flex w-fit max-w-lg items  p-2 rounded-lg my-4  bg-white  ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
+
+                                <img className='rounded-full w-12 h-12' src={message.photoURL} alt="Pic" />
+
+                                <p className='px-3'> {message.text}</p>
+
+                                {message.image ?
+                                    <img className='w-30 h-24 m-2' src={message?.image} alt=''></img>
+                                    :
+                                    null
+                                }
+                            </div>
+                        </div>
+
+                    ))
+                }
+            </div>
             <ChatBox />
         </div >
     );

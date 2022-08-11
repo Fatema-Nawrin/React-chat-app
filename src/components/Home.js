@@ -2,18 +2,17 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase.init';
 import ChatPage from './ChatPage';
+import Landing from './Landing';
 
 const Home = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
     return (
-        <div>
-            {/* <Login></Login> */}
+        <div className=' bg-blue-50'>
             {
                 user ?
                     <ChatPage></ChatPage>
                     :
-                    <div>Home</div>
+                    <Landing></Landing>
             }
         </div>
     );

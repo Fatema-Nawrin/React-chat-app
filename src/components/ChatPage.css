@@ -1,24 +1,4 @@
-.msgs {
-    width: 80%;
-}
-
-.chatLine {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-}
-
-img {
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-}
-
-p {
-    font-size: 20px;
-    padding: 0 5px;
-}
-
 .sentMsgs {
-    background-color: rgb(176, 248, 224);
+    flex-direction: row-reverse;
+    float: right;
 }
