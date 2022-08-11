@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { auth } from '../firebase.init';
 
 const Navbar = () => {
-    const [signInWithGoogle, googleUser, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, loading] = useSignInWithGoogle(auth);
     const [user] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
@@ -15,9 +15,10 @@ const Navbar = () => {
             <ul>
                 <li>
                     {user ?
-                        <Link to='/'> <button onClick={logout} className=''>Sign out</button></Link>
+                        <button onClick={logout} className=''>Sign out</button>
                         :
-                        <Link to='/chat'> <button onClick={() => signInWithGoogle()}>Login with Google</button></Link>}
+                        <button onClick={() => signInWithGoogle()}>Login with Google</button>
+                    }
                 </li>
 
             </ul>
