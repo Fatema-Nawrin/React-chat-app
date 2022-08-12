@@ -40,9 +40,15 @@ const ChatBox = () => {
         setMsg('')
         setFile('')
         event.target.reset()
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth'
+        })
     }
+
     return (
-        <div className='w-full fixed flex justify-center bottom-0 p-3 shadow-2xl'>
+        <div className='w-full fixed flex justify-center bottom-0 p-3 bg-slate-50 shadow-2xl'>
             <form onSubmit={sendMsg}>
                 <div className='flex items-center'>
                     <label for="fileInput">

@@ -23,7 +23,7 @@ const ChatPage = () => {
                     messages.map((message, index) => (
                         <div key={index} className={`flex  ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
 
-                            <div className={`flex w-fit max-w-lg items  p-2 rounded-lg my-4  bg-white  ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
+                            <div className={`flex items-center w-fit max-w-lg items  p-2 rounded-lg my-4 shadow-xl bg-white  ${message.uid === auth.currentUser.uid ? 'sentMsgs' : 'receivedMsgs'}`}>
 
                                 <img className='rounded-full w-12 h-12' src={message.photoURL} alt="Pic" />
 
